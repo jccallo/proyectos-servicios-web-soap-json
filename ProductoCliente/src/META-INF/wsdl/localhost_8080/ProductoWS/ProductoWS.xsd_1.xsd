@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.2 (UNKNOWN-17d59c9; 2018-09-26T15:16:30-0700) JAXWS-RI/2.3.1 JAXWS-API/2.3.1 JAXB-RI/2.3.1 JAXB-API/2.3.1 svn-revision#unknown. --><xs:schema xmlns:tns="http://ws.ccallo.jorge.idat.pe/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws.ccallo.jorge.idat.pe/">
+
+<xs:element name="productoCrear" type="tns:productoCrear"/>
+
+<xs:element name="productoCrearResponse" type="tns:productoCrearResponse"/>
+
+<xs:element name="productoListar" type="tns:productoListar"/>
+
+<xs:element name="productoListarResponse" type="tns:productoListarResponse"/>
+
+<xs:complexType name="productoListar">
+<xs:sequence>
+<xs:element name="limite" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="productoListarResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:producto" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="producto">
+<xs:sequence>
+<xs:element name="categoriaId" type="xs:int" minOccurs="0"/>
+<xs:element name="marca" type="xs:string" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="precio" type="xs:double" minOccurs="0"/>
+<xs:element name="productoId" type="xs:int" minOccurs="0"/>
+<xs:element name="stock" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="productoCrear">
+<xs:sequence>
+<xs:element name="arg0" type="tns:producto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="productoCrearResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:producto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
